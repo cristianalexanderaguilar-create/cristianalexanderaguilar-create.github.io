@@ -220,6 +220,41 @@ background:linear-gradient(45deg,#1877f2,#0a5dd1);
 border-color:transparent;
 }
 
+/* ULTIMO VIDEO */
+
+.video-card{
+width:100%;
+max-width:380px;
+margin-top:30px;
+}
+
+.video-card h2{
+font-size:.95rem;
+font-weight:600;
+letter-spacing:.5px;
+margin-bottom:12px;
+color:#eaeaea;
+}
+
+.video-frame{
+position:relative;
+width:100%;
+aspect-ratio:16/9;
+border-radius:14px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.18);
+background:rgba(255,255,255,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.video-frame iframe{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+}
+
 /* FOOTER */
 
 .footer{
@@ -308,6 +343,18 @@ Facebook
 </a>
 
 </div>
+
+<section class="video-card fade-in d5">
+<h2>&#9654; Mi &uacute;ltimo video</h2>
+<div class="video-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUNkMcLbcYkSP_d_F1jJkR_A"
+title="Último video de Cristian Alexander Aguilar"
+loading="lazy"
+allow="accelerometer; encrypted-media; picture-in-picture"
+allowfullscreen
+referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+</section>
 
 <div class="footer fade-in d5">
 📍 Puebla, MX
