@@ -220,6 +220,55 @@ background:linear-gradient(45deg,#1877f2,#0a5dd1);
 border-color:transparent;
 }
 
+/* CONTADOR DEL RETO */
+
+.challenge{
+width:100%;
+max-width:380px;
+margin:-10px 0 28px;
+padding:16px 18px;
+border-radius:14px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.18);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+}
+
+.challenge-day{
+font-size:1.5rem;
+font-weight:700;
+letter-spacing:.5px;
+}
+
+.challenge-day span{
+background:linear-gradient(90deg,#a855f7,#ec4899);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+.challenge-bar{
+height:8px;
+margin:10px 0 12px;
+border-radius:99px;
+background:rgba(255,255,255,.15);
+overflow:hidden;
+}
+
+.challenge-fill{
+height:100%;
+width:0;
+border-radius:99px;
+background:linear-gradient(90deg,#a855f7,#ec4899);
+transition:width 1s ease;
+}
+
+.challenge-quote{
+font-size:.9rem;
+font-weight:300;
+color:#e6e6e6;
+}
+
 /* ULTIMO VIDEO */
 
 .video-card{
@@ -308,6 +357,12 @@ Cristian Alexander Aguilar
 Gym &bull; IA &bull; Contenido
 </p>
 
+<div class="challenge fade-in d3">
+<div class="challenge-day">D&iacute;a <span id="challenge-current">11</span> de 90</div>
+<div class="challenge-bar"><div class="challenge-fill" id="challenge-fill" style="width:12.2%"></div></div>
+<p class="challenge-quote">Nadie apost&oacute; por m&iacute;, ni yo &#128520;</p>
+</div>
+
 <div class="links-wrapper">
 
 <a href="https://www.instagram.com/cristiann_raw/"
@@ -361,6 +416,18 @@ referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
 </div>
+
+<script>
+(function(){
+var START="2026-09-08",TOTAL=90;
+var today=new Intl.DateTimeFormat("en-CA",{timeZone:"America/Mexico_City"}).format(new Date());
+function ms(s){var p=s.split("-");return Date.UTC(+p[0],+p[1]-1,+p[2]);}
+var day=Math.floor((ms(today)-ms(START))/86400000)+1;
+day=Math.max(1,Math.min(TOTAL,day));
+document.getElementById("challenge-current").textContent=day;
+document.getElementById("challenge-fill").style.width=(day/TOTAL*100)+"%";
+})();
+</script>
 
 </body>
 </html>
